@@ -24,7 +24,7 @@ char *ngx_http_hello(ngx_conf_t *cf, ngx_command_t *cmd,void *conf){
 }
 
 static ngx_int_t ngx_http_hello_handler(ngx_http_request_t *r){
-    ngx_int_t rc = ngx_http_discard_request(r);
+    ngx_int_t rc = ngx_http_discard_request_body(r);
     if (rc!= NGX_OK) {
         return rc;
     }
