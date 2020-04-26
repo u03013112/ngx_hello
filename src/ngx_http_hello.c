@@ -14,7 +14,7 @@ static ngx_command_t ngx_http_hello_commands[] = {
       0,//这个参数暂时不理解，p85
       NULL },
     ngx_null_command
-}
+};
 
 char *ngx_http_hello(ngx_conf_t *cf, ngx_command_t *cmd,void *conf){
     ngx_http_core_loc_conf_t *clcf = ngx_http_conf_get_module_loc_conf(cf, ngx_http_core_module);
