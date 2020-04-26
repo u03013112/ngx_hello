@@ -4,6 +4,7 @@
 #include <ngx_http.h>
 
 char *ngx_http_hello(ngx_conf_t *cf, ngx_command_t *cmd,void *conf);
+static ngx_int_t ngx_http_hello_handler(ngx_http_request_t *r);
 
 static ngx_command_t ngx_http_hello_commands[] = {
 
