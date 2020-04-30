@@ -83,19 +83,17 @@ static ngx_int_t ngx_http_hello_handler(ngx_http_request_t *r){
     return ngx_http_output_filter(r, &out);
 }
 
-// static ngx_int_t ngx_http_hello_access_handler(ngx_http_request_t *r){
-//     ngx_log_error(NGX_LOG_ERR,r->connection->log,0,"hello access\n");
-//     return NGX_OK;
-// }
+static ngx_int_t ngx_http_hello_access_handler(ngx_http_request_t *r){
+    ngx_log_error(NGX_LOG_ERR,r->connection->log,0,"hello access\n");
+    return NGX_OK;
+}
 
 static ngx_int_t ngx_http_hello_init(ngx_conf_t *cf){
     ngx_http_handler_pt        *h;
-    // ngx_http_core_main_conf_t  *cmcf;
-    // cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_hello_module);
+    ngx_http_core_main_conf_t  *cmcf;
 
-    ngx_http_core_loc_conf_t *clcf = ngx_http_conf_get_module_loc_conf(cf, ngx_http_hello_module);
-
-    h = ngx_array_push(&clcf->phases[NGX_HTTP_ACCESS_PHASE].handlers);
+    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+    h = ngx_array_push(&cmcf->phases[NGX_HTTP_ACCESS_PHASE].handlers);
     if (h == NULL) {
         return NGX_ERROR;
     }
