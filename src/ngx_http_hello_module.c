@@ -93,7 +93,7 @@ static ngx_int_t ngx_http_hello_init(ngx_conf_t *cf){
     // ngx_http_core_main_conf_t  *cmcf;
     // cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_hello_module);
 
-    ngx_http_core_loc_conf_t *clcf = ngx_http_conf_get_module_loc_conf(cf, ngx_http_core_module);
+    ngx_http_core_loc_conf_t *clcf = ngx_http_conf_get_module_loc_conf(cf, ngx_http_hello_module);
 
     h = ngx_array_push(&clcf->phases[NGX_HTTP_ACCESS_PHASE].handlers);
     if (h == NULL) {
