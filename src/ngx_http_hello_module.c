@@ -84,7 +84,7 @@ static ngx_int_t ngx_http_hello_handler(ngx_http_request_t *r){
 }
 
 static ngx_int_t ngx_http_hello_access_handler(ngx_http_request_t *r){
-    ngx_log_error(NGX_LOG_ERR,r->connection->log,0,"hello access\n");
+    ngx_log_error(NGX_LOG_STDERR,r->connection->log,0,"hello access\n");
     return NGX_OK;
 }
 
