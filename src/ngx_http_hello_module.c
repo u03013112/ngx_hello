@@ -83,10 +83,10 @@ static ngx_int_t ngx_http_hello_handler(ngx_http_request_t *r){
     return ngx_http_output_filter(r, &out);
 }
 
-static ngx_int_t ngx_http_hello_access_handler(ngx_http_request_t *r){
-    ngx_log_error(NGX_LOG_ERR,r->connection->log,0,"hello access\n");
-    return NGX_OK;
-}
+// static ngx_int_t ngx_http_hello_access_handler(ngx_http_request_t *r){
+//     ngx_log_error(NGX_LOG_ERR,r->connection->log,0,"hello access\n");
+//     return NGX_OK;
+// }
 
 static ngx_int_t ngx_http_hello_init(ngx_conf_t *cf){
     // ngx_http_handler_pt        *h;
